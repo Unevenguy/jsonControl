@@ -1,0 +1,80 @@
+{
+	"setup": {
+		"htmlClass": "unJSON"
+	},
+	"userTypes": [{
+			"id": "USER7DMDA5",
+			"label": "admin"
+		},
+		{
+			"id": "USER7DMDY7",
+			"label": "worker"
+		},
+		{
+			"id": "USER7DMDC4",
+			"label": "visitor"
+		},
+		{}
+	],
+	"data": [{
+			"id": "DATAIMWWFS4",
+			"label": "Gender",
+			"value": "jsonVariables.person.gender",
+			"default": null,
+			"nullable": true
+		},{
+			"id": "DATAIMWWFS6",
+			"label": "Age",
+			"value": "jsonVariables.person.age",
+			"default": null,
+			"nullable": true
+		},{
+			"id": "DATAIMWWFS7",
+			"label": "First Name",
+			"value": "jsonVariables.person.firstName",
+			"default": null,
+			"nullable": true
+		},
+		{}
+	],
+	"dataInfo": [{
+		"id": "INFO6DFO8A3",
+		"dataId": "DATAIMWWFS4",
+    "mustBeOption": true,
+		"options": [{
+				"id": "INFOJFSIFS5W",
+        "default": "True",
+				"label": "Male",
+				"value": "M"
+			},
+			{
+				"id": "INFOJFSIFS5Z",
+				"name": "Female",
+				"value": "F"
+			},
+			{}
+		]
+	}],
+	"dataView": [{
+		"id": "VIEW6ASVP3",
+		"dataId": "DATAIMWWFS4"
+	},{
+		"id": "VIEW6ASVP6",
+		"dataId": "DATAIMWWFS6"
+	},{
+		"id": "VIEW6ASVP7",
+		"dataId": "DATAIMWWFS7"
+	}
+	],
+	"dataEdit": [{
+		"id": "EDIT6ASVP3",
+		"dataId": "DATAIMWWFS4",
+		"type": "Selection"
+	},{
+		"id": "EDIT6ASVP6",
+		"dataId": "DATAIMWWFS6",
+    "type": "Value"
+  }
+  ]
+
+}

@@ -1,0 +1,8 @@
+{
+  "status": "ok",
+	"person": {
+    "gender": "Female",
+    "age": 61,
+    "firstName": "Karen"
+	}
+}

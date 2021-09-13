@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <title>Project</title>
+  
+</head>
+
+<body>
+    <div class="unJSON" data-view="VIEW6ASVP3">view1</div>
+
+    <div class="unJSON" data-view="VIEW6ASVP6">view2</div>
+
+    <div class="unJSON" data-view="VIEW6ASVP7" data-label="labelColon">Span1</div>
+  
+    <div class="unJSON" data-view="VIEW6ASVP7">Span2</div>
+
+    <div class="unJSON" data-edit="EDIT6ASVP3">Span3</div>
+    
+    <script src="src/common/format.js"></script>
+    <script src="src/common/http.js"></script>
+    <script src="src/common/json.js"></script>
+    <script src="src/common/regex.js"></script>
+    <script src="src/controllers/dataIds.js"></script>
+    <script src="src/controllers/viewer.js"></script>
+    <script src="src/controllers/change.js"></script>
+    <script src="src/controllers/editor.js"></script>
+    
+    <script src="src/common/test.js"></script>
+    <script src="src/common/format.test.js"></script>
+    <script src="src/common/json.test.js"></script>
+    <script src="src/common/regex.test.js"></script>
+    
+  
+  
+    <script>
+        let jsonVariables = {};
+        let jsonData= {};
+
+        getRequest('jsonVariables.json').then( function (tempJSON) {
+            jsonVariables = JSON.parse(tempJSON);
+        }, function (error) {
+            console.log(error)
+        })
+        
+        getRequest('jsonData.json').then( function (tempJSON) {
+            jsonData = JSON.parse(tempJSON);
+        }, function (error) {
+            console.log(error)
+        });
+      
+        const checkDataLoaded = () => {
+          if ((jsonVariables.status == 'ok') && (jsonData.setup != undefined)) { 
+            clearInterval(checkDataInterval);
+            setupDataIds();
+            setupViews();
+            setupEditors();
+          }
+        }
+          
+        var checkDataInterval=setInterval(checkDataLoaded,100);
+      
+    </script>
+</body>
+</html>
